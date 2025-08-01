@@ -1,0 +1,7 @@
+remote_host = "xcp-server-01.internal.domain"
+remote_username = "root"
+remote_password = "CHANGE_IT"
+sr_name = "SR-PROD-1"
+sr_iso_name = "SR-ISOS-NFS"
+ssh_username = "initialuser"
+ssh_password = "ThisIsInsecure!"

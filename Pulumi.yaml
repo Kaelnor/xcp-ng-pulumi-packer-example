@@ -1,0 +1,11 @@
+name: xcp-example
+description: Simple python pulumi example for XCP-ng
+runtime:
+  name: python
+  options:
+    toolchain: uv
+    virtualenv: .venv
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: python

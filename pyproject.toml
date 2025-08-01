@@ -1,0 +1,11 @@
+[project]
+name = "xcp-example"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "jsonrpc-websocket>=3.1.5",
+    "pulumi>=3.0.0,<4.0.0",
+    "pulumi-cloudinit>=1.4.12",
+    "pulumi-random>=4.18.2",
+    "pulumi-xenorchestra>=2.1.0",
+]
