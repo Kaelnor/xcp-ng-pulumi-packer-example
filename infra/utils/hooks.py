@@ -3,6 +3,7 @@ import aiohttp
 import ssl
 import pulumi
 
+from urllib.parse import urljoin
 from jsonrpc_websocket import Server
 
 
@@ -46,19 +47,19 @@ async def set_memory_and_restart(args: pulumi.ResourceHookArgs):
     async with aiohttp.ClientSession(
         connector=aiohttp.TCPConnector(ssl=context),
     ) as aioclient:
-        rpcserver = Server(f"{xo_url}/api/", aioclient)
+        api_url = urljoin(base=xo_url, url="/api/")
+        rpcserver = Server(api_url, aioclient)
 
         try:
             await rpcserver.ws_connect()
             await rpcserver.session.signInWithToken(token=xo_token)
 
-            # We create an argument dict instead of directly passing arguments to the function call
-            # because 'id' is a builtin function name in python so we can't have id='uuid'
             rpc_args = {
                 "id": vm_id,
                 "memory": vm_memory,
                 "memoryMin": vm_memory,
                 "memoryMax": vm_memory,
+                "memoryStaticMax": vm_memory,
             }
             await rpcserver.vm.setAndRestart(**rpc_args)
 
