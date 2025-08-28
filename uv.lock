@@ -361,16 +361,16 @@ wheels = [
 
 [[package]]
 name = "pulumi-xenorchestra"
-version = "2.1.0"
+version = "2.2.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "parver" },
     { name = "pulumi" },
     { name = "semver" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/8f/51/62f0a5d702a51765bc0135e4ece85dc560e149581d373cfc0d150c8331fb/pulumi_xenorchestra-2.1.0.tar.gz", hash = "sha256:909905bddff3b1e6599561b550fa9908b854cbd5c8e199a85d8466efffb72f39", size = 38496, upload-time = "2025-06-30T15:03:59.036Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/9f/e6/e3bea94ca93fc2495374e98f3ce4c0c4aaa9313a2c17ed112f1382b9c872/pulumi_xenorchestra-2.2.0.tar.gz", hash = "sha256:12b74819bbb6a1be7d0204494359af3ed8077e849e423f5e51b95f43af2625ad", size = 38485, upload-time = "2025-08-25T13:56:39.088Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c9/33/64b9f7191d0e117472e33e3c6d31556901319fae619a9b561966b3298265/pulumi_xenorchestra-2.1.0-py3-none-any.whl", hash = "sha256:230fdfa940e4db00d5184fcb192f64284635261c791735b7ec64a6d8438bfb46", size = 61810, upload-time = "2025-06-30T15:03:57.6Z" },
+    { url = "https://files.pythonhosted.org/packages/5a/01/f566c33103474a70a37884ca1c9dbbda2cddc36d841cae80543879ee691b/pulumi_xenorchestra-2.2.0-py3-none-any.whl", hash = "sha256:7f7c4d859b0625455e14aebafa79430ff7d9480ce124840e7776ea961330b876", size = 61835, upload-time = "2025-08-25T13:56:38.196Z" },
 ]
 
 [[package]]
@@ -417,7 +417,7 @@ requires-dist = [
     { name = "pulumi", specifier = ">=3.0.0,<4.0.0" },
     { name = "pulumi-cloudinit", specifier = ">=1.4.12" },
     { name = "pulumi-random", specifier = ">=4.18.2" },
-    { name = "pulumi-xenorchestra", specifier = ">=2.1.0" },
+    { name = "pulumi-xenorchestra", specifier = ">=2.2.0" },
 ]
 
 [[package]]

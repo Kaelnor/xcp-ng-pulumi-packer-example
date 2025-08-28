@@ -7,5 +7,5 @@ dependencies = [
     "pulumi>=3.0.0,<4.0.0",
     "pulumi-cloudinit>=1.4.12",
     "pulumi-random>=4.18.2",
-    "pulumi-xenorchestra>=2.1.0",
+    "pulumi-xenorchestra>=2.2.0",
 ]

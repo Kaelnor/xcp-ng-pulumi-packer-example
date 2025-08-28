@@ -10,6 +10,7 @@ Otherwise, the prerequisites are:
   - uv
   - packer
   - pulumi >= 3.182.0 (for resource hooks support)
+  - pulumi-xenorchestra >= 2.2.0
 
 uv manages its own python version by default.
 You can manually create the virtual environment with ```uv venv .venv && uv sync``` or use direnv to automate it if you prefer.
@@ -123,6 +124,8 @@ If you are worried about collisions you could change the function to use LAA MAC
 Another possibility is adding collision checks when generating the addresses by querying XenOrchestra's API.
 
 #### Set static memory limits at VM creation
+
+**EDIT 28/08/2025: Since pulumi-xenorchestra v2.2.0, hooks are not necessary anymore as the memory limits can be set through the `memory_min` and `memory_max` arguments in the VM resource constructor. I'm keeping the old workaround description below as a similar process can be useful for other purposes.**
 
 At time of writing, the pulumi/terraform XenOrchestra provider will only set the dynamic memoryMax when creating VMs.
 

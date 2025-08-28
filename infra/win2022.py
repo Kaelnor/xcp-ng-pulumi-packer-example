@@ -1,7 +1,6 @@
 import pulumi
 import pulumi_xenorchestra as xoa
 
-import utils.hooks as hooks
 from utils.network import generate_xen_mac
 
 
@@ -78,14 +77,13 @@ userdata = pulumi.Output.all(hostname=hostname, password=secret_admin_pwd).apply
 )
 
 # Instantiate the actual VM using everything above.
-# Note the hook in ResourceOptions to be able to correctly set the
-# memory settings on the created VM.
 vm = xoa.Vm(
     resource_name=vm_name,
     name_label=vm_name,
     name_description="Windows Server 2022 example deployed with pulumi",
     tags=["pulumi", "windows2022"],
     cpus=4,
+    memory_min=8 * 1024 * 1024 * 1024,
     memory_max=8 * 1024 * 1024 * 1024,
     template=template.id,
     cloud_config=userdata,
@@ -102,11 +100,6 @@ vm = xoa.Vm(
     ],
     power_state="Running",
     hvm_boot_firmware="uefi",
-    opts=pulumi.ResourceOptions(
-        hooks=pulumi.ResourceHookBinding(
-            after_create=[hooks.set_memory_and_restart],
-        ),
-    ),
 )
 
 # You can export outputs to get access to them when pulumi is done creating resources
